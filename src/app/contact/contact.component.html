@@ -1,0 +1,23 @@
+<h1> Contact View</h1>
+
+<div id = 'wrapper'>
+<div id = 'information'>
+<p *ngIf = submitted>Hello {{fname}} {{lname}}:</p> </div>
+
+<div id = 'form'> 
+<p>Last Name:</p>
+<input [(ngModel)] = 'lname'>
+<p>First Name:</p>
+<input [(ngModel)] = 'fname'>
+<p>Email:</p>
+<input [(ngModel)] = 'emailCustomer'>
+<p>Message:</p>
+<input [(ngModel)] = 'message' id = 'message' placeholder = 'Type your message...'> <br><br>
+<button (click) = 'clicked()'>Submit</button>
+
+
+
+
+
+</div>
+</div>

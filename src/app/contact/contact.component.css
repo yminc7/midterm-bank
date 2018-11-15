@@ -1,0 +1,19 @@
+#wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#information {
+    background-color: black;
+    flex-basis: 40%;
+    color: white;
+}
+
+#form {
+    flex-basis: 40%;
+}
+
+#message {
+    height: 50px;
+}

@@ -7,19 +7,24 @@ import { TellerComponent } from './teller/teller.component';
 
 import { routes } from './app.router';
 import { NavComponent } from './nav/nav.component';
+import { ContactComponent } from './contact/contact.component';
+import { BankService } from './bank.service'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
     AppComponent,
     AtmComponent,
     TellerComponent,
-    NavComponent
+    NavComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
-    routes
+    routes,
+    FormsModule
   ],
-  providers: [],
+  providers: [BankService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

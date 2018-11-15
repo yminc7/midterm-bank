@@ -1,23 +1,27 @@
 <h1>ATM View</h1>
 <div class="main">
   <section class="display">
-    > Welcome, Henry!
+    > Welcome, {{name}}! <br>
+    <p *ngIf = 'didBalance'>>Balance: ${{balance.toFixed(2)}} </p>
+    <p *ngIf = 'didWithdraw'> >You successfully withdrew money.</p>
+    <p *ngIf = 'didDeposit'> >You successfully deposited money.</p>
+    <div *ngIf = 'didTransaction'> <p *ngFor = 'let transaction of transactions'>[{{transaction.date}}] {{transaction.type}} - {{transaction.amount}} {{transaction.currency}}</p></div>
     <!-- Display Feedback information here -->
   </section>
   <aside class="options">
     <!-- Add functionality to the buttons below -->
     <ul class="options-list">
       <li class="options-item">
-        <button>Make a Widthdrawl</button>
+        <input type ="number" [(ngModel)] = 'amountWithdrawal'><button (click) = 'onWithdraw()'>Make a Withdrawl</button>
       </li>
       <li class="options-item">
-        <button>Deposit Money</button>
+        <input type="number" [(ngModel)] = 'amountDeposit'><button (click) = 'onDeposit()'>Deposit Money</button>
       </li>
       <li class="options-item">
-        <button>Balance Inquiry</button>
+        <button (click) = 'onBalance()'>Balance Inquiry</button>
       </li>
       <li class="options-item">
-        <button>Transactions History</button>
+        <button (click) = 'onTransaction()'>Transactions History</button>
       </li>
     </ul>
   </aside>
